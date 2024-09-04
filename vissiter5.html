@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie NFT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            -webkit-touch-callout: none; /* Désactiver le clic long sur les appareils tactiles */
+            -webkit-user-select: none; /* Désactiver la sélection de texte */
+            -moz-user-select: none; /* Désactiver la sélection de texte pour Firefox */
+            -ms-user-select: none; /* Désactiver la sélection de texte pour Internet Explorer/Edge */
+            user-select: none; /* Désactiver la sélection de texte pour les autres navigateurs */
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0; /* Ajusté pour une meilleure apparence sur petits écrans */
+            border-bottom: #77aaff 3px solid;
+            text-align: center; /* Centrer le texte */
+        }
+        header h1 {
+            margin: 0; /* Supprimer les marges par défaut */
+            font-size: 1.5em; /* Réduire la taille du texte pour les petits écrans */
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .container {
+            width: 90%; /* Utiliser 90% de la largeur de l'écran */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .sold-button {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Ajuster l'espacement entre les éléments */
+            margin-top: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            width: 100%; /* Utiliser 100% de la largeur disponible */
+            max-width: 300px; /* Largeur maximale pour les écrans plus grands */
+            background-color: #fff;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto; /* Garder les proportions de l'image */
+            border-radius: 15px;
+            pointer-events: none; /* Désactiver les interactions avec l'image */
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0); /* Couche transparente */
+            z-index: 1;
+            pointer-events: none; /* Ignore les clics */
+        }
+        .gallery-item h3 {
+            margin: 10px 0;
+            font-size: 1em; /* Ajuster la taille du texte */
+        }
+        .gallery-item p {
+            margin: 5px 0;
+            font-size: 0.9em; /* Ajuster la taille du texte */
+        }
+
+.buy-button {
+    display: block;
+    width: 80%; /* Ajustez cette largeur si nécessaire */
+    margin: 10px auto 0 auto; /* Centre horizontalement le bouton */
+    padding: 10px;
+    background-color: #77aaff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+        .buy-button:hover {
+            background-color: #0056ea;
+            transition: 0.5s ease-out;
+        }
+
+        /* Media Queries */
+        @media (min-width: 769px) {
+            .gallery-item {
+                width: 30%; /* Trois colonnes sur les grands écrans */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 45%; /* Deux colonnes sur les écrans moyens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%; /* Une colonne sur les petits écrans */
+            }
+            header h1 {
+                font-size: 1.2em; /* Réduire la taille du texte du header */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mes Collections</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="gallery">
+            <div class="gallery-item" data-id="little77" data-sold="false">
+                <img id="little7" src="littleboys7.png" alt="NFT 1">
+                <div class="overlay"></div>
+                <h3 id="littletext7">LittleBoys#7</h3>
+                <p>No comment.</p>
+                <p><strong id="Prixlittle7">Prix : 0.01€</strong></p>
+                <a href="achat.html?title=LittleBoys#7&price=100&img=littleboys7.png" class="buy-button">Acheter</a>
+            </div>
+            <div class="gallery-item" data-id="little99" data-sold="false">
+                <img id="little9" src="modelelittleboys.png" alt="NFT 2">
+                <div class="overlay"></div>
+                <h3 id="littletext9">LittleBoys#9</h3>
+                <p>No comment.</p>
+                <p><strong id="Prixlittle9">Prix : 0.01€</strong></p>
+                <a href="achat1.html?title=LittleBoys#7&price=150&img=modelelittleboys.png" class="buy-button">Acheter</a>
+            </div>
+            <div class="gallery-item" data-id="little100" data-sold="false">
+                <img id="little10" src="littleboys10.png" alt="NFT 3">
+                <div class="overlay"></div>
+                <h3 id="littletext10">LittleBoys#10</h3>
+                <p>No comment.</p>
+                <p><strong id="Prixlittle10">Prix : 0.01€</strong></p>
+                <a href="achat2.html?title=LittleBoys#10&price=120&img=littleboys10.png" class="buy-button">Acheter</a>
+            </div>
+            <div class="gallery-item" data-id="little8" data-sold="false">
+                <img id="little8" src="littleboys8.png" alt="NFT 4">
+                <div class="overlay"></div>
+                <h3 id="littletext8">LittleBoys#8</h3>
+                <p>No comment.</p>
+                <p><strong id="Prixlittle8">Prix : 0.01€</strong></p>
+                <a href="achat3.html?title=LittleBoys#8&price=150&img=littleboys8.png" class="buy-button">Acheter</a>
+            </div>
+            <div class="gallery-item" data-id="little5" data-sold="false">
+                <img id="little5" src="littleboys55.png" alt="NFT 5">
+                <div class="overlay"></div>
+                <h3 id="littletext5">LittleBoys#5</h3>
+                <p>No comment.</p>
+                <p><strong id="Prixlittle5">Prix : 0.01€</strong></p>
+                <a href="achat4.html?title=LittleBoys#5&price=100&img=littleboys55.png" class="buy-button">Acheter</a>
+            </div>
+            <div class="gallery-item" data-id="little11" data-sold="false">
+                <img id="little11" src="littleboy11.png" alt="NFT 6">
+                <div class="overlay"></div>
+                <h3 id="littletext11">LittleBoys#11</h3>
+                <p>No comment.</p>
+                <p><strong id="Prixlittle11">Prix : 0.01€</strong></p>
+                <a href="achat5.html?title=LittleBoys#11&price=110&img=littleboys11.png" class="buy-button">Acheter</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Récupérer les informations du produit
+        const nomName = document.getElementById('littletext7').innerText;
+        const imageProduit = document.getElementById('little7').src;
+        const prixProduit = document.getElementById('Prixlittle7').innerText;
+
+        // Enregistrer les informations dans le localStorage
+        localStorage.setItem('nomName', nomName);
+        localStorage.setItem('imageProduit', imageProduit);
+        localStorage.setItem('prixProduit', prixProduit);
+
+        const nomName1 = document.getElementById('littletext9').innerText;
+        const imageProduit1 = document.getElementById('little9').src;
+        const prixProduit1 = document.getElementById('Prixlittle9').innerText;
+        localStorage.setItem('nomName1', nomName1);
+        localStorage.setItem('imageProduit1', imageProduit1);
+        localStorage.setItem('prixProduit1', prixProduit1);
+
+        const nomName2 = document.getElementById('littletext10').innerText;
+        const imageProduit2 = document.getElementById('little10').src;
+        const prixProduit2  = document.getElementById('Prixlittle10').innerText;
+        localStorage.setItem('nomName2', nomName2);
+        localStorage.setItem('imageProduit2', imageProduit2);
+        localStorage.setItem('prixProduit2', prixProduit2);
+
+        const nomName3 = document.getElementById('littletext8').innerText;
+        const imageProduit3 = document.getElementById('little8').src;
+        const prixProduit3  = document.getElementById('Prixlittle8').innerText;
+        localStorage.setItem('nomName3', nomName3);
+        localStorage.setItem('imageProduit3', imageProduit3);
+        localStorage.setItem('prixProduit3', prixProduit3);
+
+        const nomName4 = document.getElementById('littletext5').innerText;
+        const imageProduit4 = document.getElementById('little5').src;
+        const prixProduit4 = document.getElementById('Prixlittle5').innerText;
+         // Enregistrer les informations dans le localStorage
+        localStorage.setItem('nomName4', nomName4);
+        localStorage.setItem('imageProduit4', imageProduit4);
+        localStorage.setItem('prixProduit4', prixProduit4);
+
+        const nomName5 = document.getElementById('littletext11').innerText;
+        const imageProduit5 = document.getElementById('little11').src;
+        const prixProduit5 = document.getElementById('Prixlittle11').innerText;
+        localStorage.setItem('nomName5', nomName5);
+        localStorage.setItem('imageProduit5', imageProduit5);
+        localStorage.setItem('prixProduit5', prixProduit5);
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Désactive le menu contextuel
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(function(item) {
+                const id = item.getAttribute('data-id');
+                const isSold = localStorage.getItem(`sold_${id}`) === 'true';
+
+                if (isSold) {
+                    item.setAttribute('data-sold', 'true');
+                    item.querySelector('.buy-button').innerText = 'Vendu';
+                    item.querySelector('.buy-button').classList.add('sold-button');
+                    item.querySelector('.buy-button').style.pointerEvents = 'none';
+                    item.querySelector('img').style.opacity = '0.5';
+                    item.querySelector('.overlay').style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
